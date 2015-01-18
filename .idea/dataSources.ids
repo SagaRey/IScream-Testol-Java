@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="MySQL - testol@localhost" uuid="64f2bf50-670d-47eb-806c-c2cc74ac0e12">
+    <database-info product="MySQL" version="5.6.16" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.29 ( Revision: alexander.soklakov@oracle.com-20140120140810-s44574olh90i6i4l )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="testol"/>
+    <table name="event" schema="" catalog="testol" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="date" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="cno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="operate" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tqno" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="optionA" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionB" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionC" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionD" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionE" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionF" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionG" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="score" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="eventcno" columns="cno" ref-table="testcard" ref-schema="" ref-catalog="testol" ref-columns="cno" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="eventinfo" schema="" catalog="testol" type="VIEW">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="date" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="cno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="operate" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="type" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="sid" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="sname" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="subject" sqlType="VARCHAR" length="64" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tqno" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="qno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="chapter" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="point" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="score" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="optionA" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionB" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionC" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionD" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionE" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionF" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionG" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="optionH" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionI" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionJ" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionK" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionL" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionM" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionN" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="manager" schema="" catalog="testol" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="mid" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="managermid" unique="true" columns="mid"/>
+    </table>
+    <table name="question" schema="" catalog="testol" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="date" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="qno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="subject" sqlType="VARCHAR" length="64" precision="0" nullable="false" jdbcType="12"/>
+      <column name="chapter" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="tid" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="knowledge1" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="knowledge2" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="knowledge3" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="keyword1" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="keyword2" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="keyword3" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="type" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="difficulty" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="point" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="question" sqlType="VARCHAR" length="1024" precision="0" nullable="false" jdbcType="12"/>
+      <column name="optionA" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionB" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionC" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionD" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionE" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionF" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionG" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="optionH" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionI" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionJ" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionK" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionL" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionM" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionN" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="questiontid" columns="tid" ref-table="teacher" ref-schema="" ref-catalog="testol" ref-columns="tid" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="ttoqqno" table="ttoq" schema="" catalog="testol" columns="qno"/>
+      <index name="qno" unique="true" columns="qno"/>
+    </table>
+    <table name="questioninfo" schema="" catalog="testol" type="VIEW">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="qno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="subject" sqlType="VARCHAR" length="64" precision="0" nullable="false" jdbcType="12"/>
+      <column name="chapter" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="tid" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tname" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="question" sqlType="VARCHAR" length="1024" precision="0" nullable="false" jdbcType="12"/>
+      <column name="difficulty" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="point" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="knowledge1" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="knowledge2" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="knowledge3" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="keyword1" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="keyword2" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="keyword3" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="type" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="optionA" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionB" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionC" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionD" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionE" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionF" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionG" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="optionH" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionI" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionJ" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionK" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionL" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionM" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionN" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="date" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+    </table>
+    <table name="report" schema="" catalog="testol" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="cno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="score" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="reportcno" columns="cno" ref-table="testcard" ref-schema="" ref-catalog="testol" ref-columns="cno" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="reportinfo" schema="" catalog="testol" type="VIEW">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="cno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="sid" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="sname" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="date" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="tno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="subject" sqlType="VARCHAR" length="64" precision="0" nullable="false" jdbcType="12"/>
+      <column name="difficulty" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="score" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="total" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+    </table>
+    <table name="student" schema="" catalog="testol" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="sid" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="sname" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="testcardsid" table="testcard" schema="" catalog="testol" columns="sid"/>
+      <index name="studentsid" unique="true" columns="sid"/>
+    </table>
+    <table name="teacher" schema="" catalog="testol" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tid" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tname" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="subject" sqlType="VARCHAR" length="64" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="questiontid" table="question" schema="" catalog="testol" columns="tid"/>
+      <exported-key name="testtid" table="test" schema="" catalog="testol" columns="tid"/>
+      <index name="teachertid" unique="true" columns="tid"/>
+    </table>
+    <table name="teacherinfo" schema="" catalog="testol" type="VIEW">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="tid" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tname" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="subject" sqlType="VARCHAR" length="64" precision="0" nullable="false" jdbcType="12"/>
+      <column name="qno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="type" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="chapter" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="difficulty" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+    </table>
+    <table name="test" schema="" catalog="testol" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="date" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="tno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="subject" sqlType="VARCHAR" length="64" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tid" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="quantity" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="duration" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="difficulty" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="total" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="testtid" columns="tid" ref-table="teacher" ref-schema="" ref-catalog="testol" ref-columns="tid" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="testcardtno" table="testcard" schema="" catalog="testol" columns="tno"/>
+      <exported-key name="ttoqtno" table="ttoq" schema="" catalog="testol" columns="tno"/>
+      <index name="testtno" unique="true" columns="tno"/>
+    </table>
+    <table name="testcard" schema="" catalog="testol" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="date" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="cno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="sid" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="testcardsid" columns="sid" ref-table="student" ref-schema="" ref-catalog="testol" ref-columns="sid" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="testcardtno" columns="tno" ref-table="test" ref-schema="" ref-catalog="testol" ref-columns="tno" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="eventcno" table="event" schema="" catalog="testol" columns="cno"/>
+      <exported-key name="reportcno" table="report" schema="" catalog="testol" columns="cno"/>
+      <index name="testcardcno" unique="true" columns="cno"/>
+    </table>
+    <table name="testcardinfo" schema="" catalog="testol" type="VIEW">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="cno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="sid" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="sname" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="subject" sqlType="VARCHAR" length="64" precision="0" nullable="false" jdbcType="12"/>
+      <column name="difficulty" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="quantity" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="duration" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="total" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+    </table>
+    <table name="testinfo" schema="" catalog="testol" type="VIEW">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="tno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tid" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tname" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="subject" sqlType="VARCHAR" length="64" precision="0" nullable="false" jdbcType="12"/>
+      <column name="difficulty" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="quantity" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="duration" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="total" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+    </table>
+    <table name="ttoq" schema="" catalog="testol" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tqno" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="qno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="ttoqqno" columns="qno" ref-table="question" ref-schema="" ref-catalog="testol" ref-columns="qno" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="ttoqtno" columns="tno" ref-table="test" ref-schema="" ref-catalog="testol" ref-columns="tno" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="ttoqinfo" schema="" catalog="testol" type="VIEW">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="tno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tqno" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="qno" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="tid" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="question" sqlType="VARCHAR" length="1024" precision="0" nullable="false" jdbcType="12"/>
+      <column name="subject" sqlType="VARCHAR" length="64" precision="0" nullable="false" jdbcType="12"/>
+      <column name="chapter" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="difficulty" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="point" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="knowledge1" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="knowledge2" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="knowledge3" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="keyword1" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="keyword2" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="keyword3" sqlType="VARCHAR" length="32" precision="0" nullable="true" jdbcType="12"/>
+      <column name="type" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="optionA" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionB" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionC" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionD" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionE" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionF" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionG" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="optionH" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionI" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionJ" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionK" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionL" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionM" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="optionN" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+    </table>
+  </data-source>
+</component>

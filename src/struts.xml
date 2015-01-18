@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="default" namespace="/" extends="struts-default">
+        <default-action-ref name="index"></default-action-ref>
+        <global-results>
+            <result name="login">/login.html</result>
+        </global-results>
+        <action name="index">
+            <result>/login.html</result>
+        </action>
+        <action name="studentlogin" class="studentAction" method="login">
+            <result name="success">/student/studentindex.html</result>
+        </action>
+        <action name="teacherlogin" class="teacherAction" method="login">
+            <result name="success">/teacher/teacherindex.html</result>
+        </action>
+        <action name="managerlogin" class="managerAction" method="login">
+        </action>
+    </package>
+    <package name="teacher" namespace="/teacher" extends="struts-default">
+        <default-action-ref name="index"/>
+        <global-results>
+            <result name="login" type="redirectAction">
+                <param name="actionName">index</param>
+                <param name="namespace">/</param>
+            </result>
+        </global-results>
+        <action name="index" class="teacherAction">
+            <result name="success">/teacher/teacherindex.html</result>
+        </action>
+        <action name="questionmanage" class="questionAction" method="query">
+            <result name="success">/teacher/questionmanage.jsp</result>
+        </action>
+        <action name="querybycondition" class="questionAction" method="querybycondition">
+            <result name="success">/teacher/questionmanage.jsp</result>
+        </action>
+    </package>
+    <package name="student" namespace="/student" extends="struts-default">
+        <default-action-ref name="index"/>
+        <global-results>
+            <result name="login" type="redirectAction">
+                <param name="actionName">index</param>
+                <param name="namespace">/</param>
+            </result>
+        </global-results>
+        <action name="index">
+            <result>/student/studentindex.html</result>
+        </action>
+        <action name="practice" class="questionAction" method="practice">
+            <result name="success">/student/practice.jsp</result>
+        </action>
+        <action name="test" class="testAction" method="test">
+            <!--<result name="success">/student/test.jsp</result>-->
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="TestOL:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/TestOL_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="TestOL/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="TestOL" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="Struts 2-2.3.16" />
+          <element id="library" level="application" name="Spring-4.0.2.RELEASE" />
+          <element id="library" level="application" name="Spring MVC-4.0.2.RELEASE" />
+          <element id="library" level="application" name="Hibernate 4.2.2-4.2.2" />
+          <element id="library" level="application" name="mysql-connector-java-5.1.29-bin" />
+          <element id="library" level="application" name="c3p0-0.9.5-pre6" />
+          <element id="library" level="application" name="struts2-spring-plugin-2.3.16" />
+          <element id="library" level="application" name="jstl" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

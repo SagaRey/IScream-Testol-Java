@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.iscream.entity.Questioninfo" table="questioninfo" schema="" catalog="testol">
+        <id name="id">
+            <column name="id" sql-type="int" length="10" not-null="true"/>
+            <generator class="native"/>
+        </id>
+        <property name="qno">
+            <column name="qno" sql-type="varchar" length="16" not-null="true"/>
+        </property>
+        <property name="subject">
+            <column name="subject" sql-type="varchar" length="64" not-null="true"/>
+        </property>
+        <property name="chapter">
+            <column name="chapter" sql-type="int" length="10" not-null="true"/>
+        </property>
+        <property name="tid">
+            <column name="tid" sql-type="varchar" length="16" not-null="true"/>
+        </property>
+        <property name="tname">
+            <column name="tname" sql-type="varchar" length="32" not-null="true"/>
+        </property>
+        <property name="question">
+            <column name="question" sql-type="varchar" length="1024" not-null="true"/>
+        </property>
+        <property name="difficulty">
+            <column name="difficulty" sql-type="int" length="10" not-null="true"/>
+        </property>
+        <property name="point">
+            <column name="point" sql-type="int" length="10" not-null="true"/>
+        </property>
+        <property name="knowledge1">
+            <column name="knowledge1" sql-type="varchar" length="32"/>
+        </property>
+        <property name="knowledge2">
+            <column name="knowledge2" sql-type="varchar" length="32"/>
+        </property>
+        <property name="knowledge3">
+            <column name="knowledge3" sql-type="varchar" length="32"/>
+        </property>
+        <property name="keyword1">
+            <column name="keyword1" sql-type="varchar" length="32"/>
+        </property>
+        <property name="keyword2">
+            <column name="keyword2" sql-type="varchar" length="32"/>
+        </property>
+        <property name="keyword3">
+            <column name="keyword3" sql-type="varchar" length="32"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="varchar" length="16" not-null="true"/>
+        </property>
+        <property name="optionA">
+            <column name="optionA" sql-type="varchar"/>
+        </property>
+        <property name="optionB">
+            <column name="optionB" sql-type="varchar"/>
+        </property>
+        <property name="optionC">
+            <column name="optionC" sql-type="varchar"/>
+        </property>
+        <property name="optionD">
+            <column name="optionD" sql-type="varchar"/>
+        </property>
+        <property name="optionE">
+            <column name="optionE" sql-type="varchar"/>
+        </property>
+        <property name="optionF">
+            <column name="optionF" sql-type="varchar"/>
+        </property>
+        <property name="optionG">
+            <column name="optionG" sql-type="int" length="10"/>
+        </property>
+        <property name="optionH">
+            <column name="optionH" sql-type="varchar"/>
+        </property>
+        <property name="optionI">
+            <column name="optionI" sql-type="varchar"/>
+        </property>
+        <property name="optionJ">
+            <column name="optionJ" sql-type="varchar"/>
+        </property>
+        <property name="optionK">
+            <column name="optionK" sql-type="varchar"/>
+        </property>
+        <property name="optionL">
+            <column name="optionL" sql-type="varchar"/>
+        </property>
+        <property name="optionM">
+            <column name="optionM" sql-type="varchar"/>
+        </property>
+        <property name="optionN">
+            <column name="optionN" sql-type="int" length="10"/>
+        </property>
+        <property name="date">
+            <column name="date" sql-type="timestamp" length="19" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

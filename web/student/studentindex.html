@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TestOL</title>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+        .chevron-left{
+            width: 30px;
+        }
+        .tool-bar{
+            position: relative;
+            left: -57px;
+            visibility: hidden;
+            display: none;
+        }
+        .tool{
+        }
+        .tool-bar + .tool-bar{
+            margin-top:5px;
+        }
+        .rotate{
+            -webkit-animation:rotate 1s;
+        }
+        .rotate-tool{
+            -webkit-animation:rotateTool 9s;
+            -webkit-animation-iteration-count:infinite;
+        }
+        .rotate-tools{
+            -webkit-animation:rotateTools 14s;
+            -webkit-animation-iteration-count:infinite;
+        }
+        .z-index-100{
+            z-index: -100;
+        }
+        .ok{
+            display: none;
+            color: #d9534f;
+        }
+        .remove{
+            display: none;
+            color: #d9534f;
+        }
+        .garbage{
+            -webkit-transform:scale(0.1,0.1);
+            width: 40px;
+            height: 40px;
+            /*overflow: hidden;*/
+        }
+    </style>
+    <style type="text/css">
+        #header{
+            position: fixed;
+            right: 0;
+            left: 0;
+            top: 20px;
+        }
+        #body{
+            padding-top: 70px;
+        }
+        #footer{
+            position: fixed;
+            right: 0px;
+            left: 0px;
+            bottom: 20px;
+        }
+        #navbar{
+            position: relative;
+            top: 0px;
+            left: -26px;
+            height: 52px;
+            visibility: hidden;
+        }
+        #filter{
+        }
+        #search{
+        }
+        #add{
+        }
+        #edit{
+        }
+        #trash{
+        }
+        #view{
+        }
+        #tool{
+        }
+        #tools{
+            position: relative;
+            bottom: 0px;
+            left: -40px;
+        }
+        #trashCan{
+            position: fixed;
+            bottom: 20px;
+            right: 12px;
+            width: 82px;
+            padding-bottom: 80px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: none;
+        }
+        #empty{
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            /*display: none;*/
+        }
+    </style>
+    <style type="text/css">
+        @-webkit-keyframes rotate /* Safari and Chrome */
+        {
+
+            0% {-webkit-transform:rotateZ(0deg);}
+            100% {-webkit-transform:rotateZ(360deg);}
+        }
+        @-webkit-keyframes rotateTool /* Safari and Chrome */
+        {
+
+            0% {-webkit-transform:rotateZ(0deg);}
+            10% {-webkit-transform:rotateZ(0deg);}
+            20% {-webkit-transform:rotateZ(0deg);}
+            30% {-webkit-transform:rotateZ(360deg);}
+            40% {-webkit-transform:rotateZ(360deg);}
+            50% {-webkit-transform:rotateY(0deg);}
+            60% {-webkit-transform:rotateY(360deg);}
+            70% {-webkit-transform:rotateY(360deg);}
+            80% {-webkit-transform:rotateX(0deg);}
+            90% {-webkit-transform:rotateX(360deg);}
+            100% {-webkit-transform:rotateX(360deg);}
+        }
+        @-webkit-keyframes rotateTools /* Safari and Chrome */
+        {
+
+            0% {-webkit-transform:rotateZ(0deg);}
+            /*9% {-webkit-transform:rotateZ(180deg);}*/
+            18% {-webkit-transform:rotateZ(360deg);}
+            34% {-webkit-transform:rotateZ(360deg);}
+            46% {-webkit-transform:rotateZ(360deg);}
+            60% {-webkit-transform:rotateZ(360deg);}
+            74% {-webkit-transform:rotateZ(360deg);}
+            88% {-webkit-transform:rotateZ(360deg);}
+            100% {-webkit-transform:rotateZ(360deg);}
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <button id="navbar" type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-home"></span></button>
+        <nav name="navbar" class="navbar navbar-inverse" role="navigation" style="top:-52px;height:52px">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="studentindex.html">StudentOL</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/student/practice">Practice</a></li>
+                    <li><a href="/student/test">Test</a></li>
+                    <li><a href="#">Report</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+                    <li><a class="chevron-left"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div id="body">
+    <div id="contain" class="container">
+        <div class="blog-header">
+            <h1 class="blog-title">The Bootstrap Blog</h1>
+            <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-8 blog-main">
+
+                <div class="blog-post">
+                    <h2 class="blog-post-title">Sample blog post</h2>
+                    <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+
+                    <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
+                    <hr />
+                    <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+                    <blockquote>
+                        <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </blockquote>
+                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                    <h2>Heading</h2>
+                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                    <h3>Sub-heading</h3>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    <pre><code>Example code block</code></pre>
+                    <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+                    <h3>Sub-heading</h3>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <ul>
+                        <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+                        <li>Donec id elit non mi porta gravida at eget metus.</li>
+                        <li>Nulla vitae elit libero, a pharetra augue.</li>
+                    </ul>
+                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+                    <ol>
+                        <li>Vestibulum id ligula porta felis euismod semper.</li>
+                        <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+                        <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
+                    </ol>
+                    <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+                </div><!-- /.blog-post -->
+
+                <div class="blog-post">
+                    <h2 class="blog-post-title">Another blog post</h2>
+                    <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
+
+                    <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+                    <blockquote>
+                        <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </blockquote>
+                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                </div><!-- /.blog-post -->
+
+                <div class="blog-post">
+                    <h2 class="blog-post-title">New feature</h2>
+                    <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
+
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <ul>
+                        <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+                        <li>Donec id elit non mi porta gravida at eget metus.</li>
+                        <li>Nulla vitae elit libero, a pharetra augue.</li>
+                    </ul>
+                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+                </div><!-- /.blog-post -->
+
+                <ul class="pager">
+                    <li><a href="#">Previous</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+
+            </div><!-- /.blog-main -->
+
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+                <div class="sidebar-module sidebar-module-inset">
+                    <h4>About</h4>
+                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                </div>
+                <div class="sidebar-module">
+                    <h4>Archives</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="#">January 2014</a></li>
+                        <li><a href="#">December 2013</a></li>
+                        <li><a href="#">November 2013</a></li>
+                        <li><a href="#">October 2013</a></li>
+                        <li><a href="#">September 2013</a></li>
+                        <li><a href="#">August 2013</a></li>
+                        <li><a href="#">July 2013</a></li>
+                        <li><a href="#">June 2013</a></li>
+                        <li><a href="#">May 2013</a></li>
+                        <li><a href="#">April 2013</a></li>
+                        <li><a href="#">March 2013</a></li>
+                        <li><a href="#">February 2013</a></li>
+                    </ol>
+                </div>
+                <div class="sidebar-module">
+                    <h4>Elsewhere</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ol>
+                </div>
+            </div><!-- /.blog-sidebar -->
+
+        </div><!-- /.row -->
+    </div>
+</div>
+<!--     <div  id="footer">
+      <div class="container">
+        <div  id="tools" class="row">
+          <div class="col-md-1">
+            <div class="row">
+              <div class="col-md-8">
+                <button id="filter" class="btn btn-default btn-block tool" data-toggle="button"><span class="glyphicon glyphicon-filter"></span></button>
+                <button id="search" class="btn btn-default btn-block tool" data-toggle="button"><span class="glyphicon glyphicon-search"></span></button>
+                <button id="add" class="btn btn-default btn-block tool" data-toggle="button"><span class="glyphicon glyphicon-plus"></span></button>
+                <button id="trash" class="btn btn-default btn-block tool" data-toggle="button"><span class="glyphicon glyphicon-minus"></span></button>
+                <button id="edit" class="btn btn-default btn-block tool" data-toggle="button"><span class="glyphicon glyphicon-pencil"></span></button>
+                <button id="view" class="btn btn-default btn-block tool"><span name="col3" class="glyphicon glyphicon-th"></span></button>
+                <button id="tool" class="btn btn-default btn-block rotate-tool" data-toggle="button"><span class="glyphicon glyphicon-wrench"></span></button>
+              </div>
+              <div class="col-md-4">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-11">
+            <div id="filterTool" class="row tool-bar">
+              <div class="col-md-2">
+                <form class="form-inline">
+                  <a class="btn btn-default" type="button">Class</a>
+                  <select class="form-control">
+                    <option>-</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+            <div id="searchTool" class="row tool-bar">
+              <div class="col-md-3">
+                <div class="input-group">
+                  <input type="text" class="form-control">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Search</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div id="addTool" class="row tool-bar">
+              <div class="col-md-12">
+                <form class="form-inline" role="form">
+                  <div class="form-group">
+                    <label class="sr-only" for="sid">Student ID</label>
+                    <input type="text" class="form-control" id="sid" placeholder="Student ID">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="sname">Name</label>
+                    <input type="text" class="form-control" id="sname" placeholder="Name">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="sname">Password</label>
+                    <input type="password" class="form-control" id="sname" placeholder="Password">
+                  </div>
+                  <button type="submit" class="btn btn-default">Insert</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="trashCan" class="row center-block" ondrop="dropCan(event)" ondragover="allowDrop(event)">
+      <a id="empty" class="btn btn-link btn-block"><span class="glyphicon glyphicon-trash"></span></a>
+    </div> -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".tool").hide();
+        // $(".tool-bar").css("visibility","hidden");
+        // $(".tool-bar").hide();
+        // $("#navbar").css("visibility","hidden");
+        $("#contain").mouseover(function(){
+            $("#footer").addClass("z-index-100");
+        });
+        $("#contain").mouseout(function(){
+            $("#footer").removeClass("z-index-100");
+        });
+        $("#filter").click(function(){
+            if($("#filterTool").css("visibility")!="hidden"){
+                $("#filterTool").css("visibility","hidden");
+            }else{
+                $("#filterTool").css("visibility","visible");
+            };
+        });
+        $("#search").click(function(){
+            if($("#searchTool").css("visibility")!="hidden"){
+                $("#searchTool").css("visibility","hidden");
+            }else{
+                $("#searchTool").css("visibility","visible");
+            };
+        });
+        $("#add").click(function(){
+            if($("#addTool").css("visibility")!="hidden"){
+                $("#addTool").css("visibility","hidden");
+            }else{
+                $("#addTool").css("visibility","visible");
+            };
+        });
+        $("#tool").click(function(){
+            if($(".tool").css("display")!="none"){
+                $("#tool").removeClass("rotate-tools");
+                $("#tool").addClass("rotate-tool");
+                $("#view").removeClass("rotate-tools");
+                $("#trash").removeClass("rotate-tools");
+                $("#edit").removeClass("rotate-tools");
+                $("#add").removeClass("rotate-tools");
+                $("#search").removeClass("rotate-tools");
+                $("#filter").removeClass("rotate-tools");
+                $("#view").addClass("rotate");
+                $("#trash").addClass("rotate");
+                $("#edit").addClass("rotate");
+                $("#add").addClass("rotate");
+                $("#search").addClass("rotate");
+                $("#filter").addClass("rotate");
+                setTimeout(function(){
+                    $("#view").removeClass("rotate");
+                    $("#trash").removeClass("rotate");
+                    $("#edit").removeClass("rotate");
+                    $("#add").removeClass("rotate");
+                    $("#search").removeClass("rotate");
+                    $("#filter").removeClass("rotate");
+                },500);
+                $(".tool-bar").hide();
+                $(".tool").slideUp(500);
+            }else{
+                $("#view").addClass("rotate");
+                $("#trash").addClass("rotate");
+                $("#edit").addClass("rotate");
+                $("#add").addClass("rotate");
+                $("#search").addClass("rotate");
+                $("#filter").addClass("rotate");
+                setTimeout(function(){
+                    $("#view").removeClass("rotate");
+                    $("#trash").removeClass("rotate");
+                    $("#edit").removeClass("rotate");
+                    $("#add").removeClass("rotate");
+                    $("#search").removeClass("rotate");
+                    $("#filter").removeClass("rotate");
+                },800);
+                $("#tool").removeClass("rotate-tool");
+                $(".tool").slideDown(500);
+                $(".tool-bar").show(500);
+                setTimeout(function(){
+                    $("#view").addClass("rotate-tools");
+                },3000);
+                setTimeout(function(){
+                    $("#edit").addClass("rotate-tools");
+                },5000);
+                setTimeout(function(){
+                    $("#trash").addClass("rotate-tools");
+                },7000);
+                setTimeout(function(){
+                    $("#add").addClass("rotate-tools");
+                },9000);
+                setTimeout(function(){
+                    $("#search").addClass("rotate-tools");
+                },11000);
+                setTimeout(function(){
+                    $("#filter").addClass("rotate-tools");
+                },13000);
+                setTimeout(function(){
+                    $("#tool").addClass("rotate-tools");
+                },15000);
+            };
+        });
+        $("#navbar").click(function(){
+            $("#navbar").css("visibility","hidden");
+            $("[name='navbar']").show();
+            $("[name='navbar']").animate({width:'100%'},1000);
+        });
+        $(".chevron-left").click(function(){
+            $("[name='navbar']").animate({width:'0%'},1000,function(){
+                $("[name='navbar']").hide();
+                $("#navbar").css("visibility","visible");
+            });
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+        $("#edit").click(function(){
+            if($("[name='record']").find("td").attr("contentEditable")!="true"){
+                $("[name='record']").find("td").attr("contentEditable","true");
+                $(".ok").fadeIn();
+            }else{
+                $("[name='record']").find("td").attr("contentEditable","false");
+                $(".ok").fadeOut();
+            };
+        });
+        $("#trash").click(function(){
+            if($("[name='record']").attr("draggable")!="true"){
+                $("[name='record']").attr("draggable","true");
+                $(".remove").fadeIn();
+                $("#trashCan").fadeIn();
+            }else{
+                $("[name='record']").attr("draggable","false");
+                $(".remove").fadeOut();
+                $("#trashCan").fadeOut();
+            };
+        });
+        $("#view").click(function(){
+            if($("#view").children("span").attr("name") == "col3"){
+                $("#view").children("span").attr("name","col4");
+                $("#view").children("span").removeClass("glyphicon-th");
+                $("#view").children("span").addClass("glyphicon-th-list");
+                $("[name='record']").removeClass("col-md-3");
+                $("[name='record']").addClass("col-md-4");
+            }else if($("#view").children("span").attr("name") == "col4"){
+                $("#view").children("span").attr("name","col6");
+                $("#view").children("span").removeClass("glyphicon-th-list");
+                $("#view").children("span").addClass("glyphicon-th-large");
+                $("[name='record']").removeClass("col-md-4");
+                $("[name='record']").addClass("col-md-6");
+            }else if($("#view").children("span").attr("name") == "col6"){
+                $("#view").children("span").attr("name","col12");
+                $("#view").children("span").removeClass("glyphicon-th-large");
+                $("#view").children("span").addClass("glyphicon-list");
+                $("[name='record']").removeClass("col-md-6");
+                $("[name='record']").addClass("col-md-12");
+            }else if($("#view").children("span").attr("name") == "col12"){
+                $("#view").children("span").attr("name","col3");
+                $("#view").children("span").removeClass("glyphicon-list");
+                $("#view").children("span").addClass("glyphicon-th");
+                $("[name='record']").removeClass("col-md-12");
+                $("[name='record']").addClass("col-md-3");
+            };
+        });
+        $("#empty").click(function(){
+            var list = $("#trashCan").find("[name='record']");
+            <!--for(i=0 ; i<list.length ; i++){-->
+            <!--alert($(list[i]).text());-->
+            <!--}-->
+        });
+    });
+</script>
+<script type="text/javascript">
+    function allowDrop(ev){
+        ev.preventDefault();
+    }
+    function drag(ev){
+        ev.dataTransfer.setData("Text",ev.target.id);
+    }
+    function dropCan(ev){
+        ev.preventDefault();
+        var data=ev.dataTransfer.getData("Text");
+        document.getElementById(data).classList.add("garbage");
+        // ev.target.appendChild(document.getElementById(data));
+        $(ev.target).closest("#trashCan").append(document.getElementById(data));
+    }
+    function dropBody(ev){
+        ev.preventDefault();
+        var data=ev.dataTransfer.getData("Text");
+        // alert(document.getElementById(data).id);
+        document.getElementById(data).classList.remove("garbage");
+        $(document.getElementById(data)).hide();
+        $(document.getElementById(data)).fadeIn();
+        $(ev.target).closest("[name='record']").after(document.getElementById(data));
+    }
+</script>
+<script type="text/javascript">
+    $(function(){
+        $(".confirm-update").click(function(){
+            $(this).popover({
+                html:true,
+                placement:'right',
+                title:'Update?',
+                content:'<button class="btn btn-danger btn-xs btn-block" onclick="confirmUpdate(this)">Confirm</button><button name="sd" class="btn btn-default btn-xs btn-block" onclick="colsePopover(this)">Cancel</button>'
+            });
+            $(this).popover("show");
+        });
+        $(".confirm-delete").click(function(){
+            // $(this).popover({
+            //   html:true,
+            //   placement:'right',
+            //   title:'Delete?',
+            //   content:'<button class="btn btn-danger btn-xs btn-block" onclick="confirmDelete(this)">Confirm</button><button name="sd" class="btn btn-default btn-xs btn-block" onclick="colsePopover(this)">Cancel</button>'
+            // });
+            // $(this).popover("show");
+            $("#trashCan").append($(this).closest("[name='record']").addClass("garbage"));
+        });
+    });
+    function colsePopover(element){
+        $(element).parent().parent().prev().popover("destroy");
+    };
+    function confirmUpdate(element){
+        alert($(element).closest("[name='record']").text());
+        colsePopover(element);
+    };
+    function confirmDelete(element){
+        alert($(element).closest("[name='record']").text());
+        colsePopover(element);
+    };
+</script>
+</body>
+</html>

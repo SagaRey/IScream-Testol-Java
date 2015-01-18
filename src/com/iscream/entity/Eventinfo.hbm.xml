@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.iscream.entity.Eventinfo" table="eventinfo" schema="" catalog="testol">
+        <id name="id">
+            <column name="id" sql-type="int" length="10" not-null="true"/>
+            <generator class="native"/>
+        </id>
+        <property name="date">
+            <column name="date" sql-type="timestamp" length="19" not-null="true"/>
+        </property>
+        <property name="cno">
+            <column name="cno" sql-type="varchar" length="16" not-null="true"/>
+        </property>
+        <property name="operate">
+            <column name="operate" sql-type="varchar" length="16" not-null="true"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="varchar" length="16" not-null="true"/>
+        </property>
+        <property name="sid">
+            <column name="sid" sql-type="varchar" length="16" not-null="true"/>
+        </property>
+        <property name="sname">
+            <column name="sname" sql-type="varchar" length="16" not-null="true"/>
+        </property>
+        <property name="subject">
+            <column name="subject" sql-type="varchar" length="64" not-null="true"/>
+        </property>
+        <property name="tno">
+            <column name="tno" sql-type="varchar" length="16" not-null="true"/>
+        </property>
+        <property name="tqno">
+            <column name="tqno" sql-type="int" length="10" not-null="true"/>
+        </property>
+        <property name="qno">
+            <column name="qno" sql-type="varchar" length="16" not-null="true"/>
+        </property>
+        <property name="chapter">
+            <column name="chapter" sql-type="int" length="10" not-null="true"/>
+        </property>
+        <property name="point">
+            <column name="point" sql-type="int" length="10" not-null="true"/>
+        </property>
+        <property name="score">
+            <column name="score" sql-type="int" length="10"/>
+        </property>
+        <property name="optionA">
+            <column name="optionA" sql-type="varchar"/>
+        </property>
+        <property name="optionB">
+            <column name="optionB" sql-type="varchar"/>
+        </property>
+        <property name="optionC">
+            <column name="optionC" sql-type="varchar"/>
+        </property>
+        <property name="optionD">
+            <column name="optionD" sql-type="varchar"/>
+        </property>
+        <property name="optionE">
+            <column name="optionE" sql-type="varchar"/>
+        </property>
+        <property name="optionF">
+            <column name="optionF" sql-type="varchar"/>
+        </property>
+        <property name="optionG">
+            <column name="optionG" sql-type="int" length="10"/>
+        </property>
+        <property name="optionH">
+            <column name="optionH" sql-type="varchar"/>
+        </property>
+        <property name="optionI">
+            <column name="optionI" sql-type="varchar"/>
+        </property>
+        <property name="optionJ">
+            <column name="optionJ" sql-type="varchar"/>
+        </property>
+        <property name="optionK">
+            <column name="optionK" sql-type="varchar"/>
+        </property>
+        <property name="optionL">
+            <column name="optionL" sql-type="varchar"/>
+        </property>
+        <property name="optionM">
+            <column name="optionM" sql-type="varchar"/>
+        </property>
+        <property name="optionN">
+            <column name="optionN" sql-type="int" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

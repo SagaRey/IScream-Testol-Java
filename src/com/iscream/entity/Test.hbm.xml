@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.iscream.entity.Test" table="test" schema="" catalog="testol">
+        <id name="id">
+            <column name="id" sql-type="int" length="10" not-null="true"/>
+            <generator class="native"/>
+        </id>
+        <property name="date">
+            <column name="date" sql-type="timestamp" length="19" not-null="true"/>
+        </property>
+        <property name="tno">
+            <column name="tno" sql-type="varchar" length="16" not-null="true"/>
+        </property>
+        <property name="subject">
+            <column name="subject" sql-type="varchar" length="64" not-null="true"/>
+        </property>
+        <property name="tid">
+            <column name="tid" sql-type="varchar" length="16" not-null="true"/>
+        </property>
+        <property name="quantity">
+            <column name="quantity" sql-type="int" length="10" not-null="true"/>
+        </property>
+        <property name="duration">
+            <column name="duration" sql-type="int" length="10" not-null="true"/>
+        </property>
+        <property name="difficulty">
+            <column name="difficulty" sql-type="int" length="10" not-null="true"/>
+        </property>
+        <property name="total">
+            <column name="total" sql-type="int" length="10" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

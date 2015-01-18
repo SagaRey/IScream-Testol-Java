@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="configLocation" value="classpath:hibernate.cfg.xml"/>
+    </bean>
+    <bean id="studentDaoImpl" class="com.iscream.dao.impl.StudentDaoImpl">
+        <property name="queryAllHql" value="FROM Student"/>
+        <property name="queryBySidOrSnameHql" value="FROM Student WHERE Sid LIKE :sid OR Sname LIKE :sname"/>
+        <property name="sid" value="sid"/>
+        <property name="sname" value="sname"/>
+        <property name="getBySidHql" value="FROM Student WHERE sid = :sid"/>
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="studentBiz" class="com.iscream.biz.StudentBiz">
+        <property name="studentDaoImpl" ref="studentDaoImpl"/>
+    </bean>
+    <bean id="studentAction" class="com.iscream.action.StudentAction">
+        <property name="studentBiz" ref="studentBiz"/>
+    </bean>
+    <!--<bean id="studentAction" class="com.iscream.action.StudentAction" scope="prototype">-->
+        <!--<property name="studentBiz" ref="studentBiz"/>-->
+    <!--</bean>-->
+    <bean id="teacherDaoImpl" class="com.iscream.dao.impl.TeacherDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="teacherBiz" class="com.iscream.biz.TeacherBiz">
+        <property name="teacherDaoImpl" ref="teacherDaoImpl"/>
+    </bean>
+    <bean id="teacherAction" class="com.iscream.action.TeacherAction">
+        <property name="teacherBiz" ref="teacherBiz"/>
+    </bean>
+    <bean id="managerDaoImpl" class="com.iscream.dao.impl.ManagerDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="managerBiz" class="com.iscream.biz.ManagerBiz">
+        <property name="managerDaoImpl" ref="managerDaoImpl" />
+    </bean>
+    <bean id="managerAction" class="com.iscream.action.ManagerAction">
+        <property name="managerBiz" ref="managerBiz"/>
+    </bean>
+    <bean id="questionDaoImpl" class="com.iscream.dao.impl.QuestionDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="questionBiz" class="com.iscream.biz.QuestionBiz">
+        <property name="questionDaoImpl" ref="questionDaoImpl" />
+    </bean>
+    <bean id="questionAction" class="com.iscream.action.QuestionAction">
+        <property name="questionBiz" ref="questionBiz"/>
+    </bean>
+    <bean id="testDaoImpl" class="com.iscream.dao.impl.TestDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="testBiz" class="com.iscream.biz.TestBiz">
+        <property name="testDaoImpl" ref="testDaoImpl" />
+    </bean>
+    <bean id="testAction" class="com.iscream.action.TestAction">
+        <property name="testBiz" ref="testBiz"/>
+    </bean>
+</beans>
